@@ -1,0 +1,78 @@
+<head>
+<title>Project Name</title>
+
+<link href="style.css" type="text/css" rel="stylesheet" />
+
+<!-- jQuery API files -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+
+
+<!-- Enable Drag and Drop Support -->
+<script type="text/javascript">
+
+$(document).ready(function () {
+  $("#column1,#column2,#column3").sortable({
+    connectWith: "#column1,#column2,#column3",
+    handle: ".WidgetHeader",
+    opacity: 0.6
+  });
+});
+
+</script>
+</head>
+
+<body>
+
+<div id="Main">
+  
+  <div id="header">Project Name</div>
+  
+  <div class="Spacer"></div>
+  <!-- Column 1 -->
+  <div id="column1">
+  
+    <div class="WidgetLong">
+      <div class="WidgetHeader Purple">Google Calendar</div>
+      <iframe class="Long" src="https://www.google.com/calendar/embed?src=elijahreale%40gmail.com&ctz=America/Vancouver"></iframe>
+    </div>
+    
+  </div>
+
+  <div class="Spacer"></div>
+  <!-- Column 2 -->
+  <div id="column2">
+  
+    <div class="WidgetMedium">
+      <div class="WidgetHeader DarkRed">YouTube</div>
+      <iframe class="Medium" src="http://www.youtube.com/embed/zn7-fVtT16k" allowfullscreen></iframe>
+    </div>
+  
+    <div class="WidgetMedium">
+      <div class="WidgetHeader Brown">Google Docs</div>
+      <iframe class="Medium" src="https://docs.google.com/spreadsheet/pub?key=0AoCF2iBs2ZZ5dFNLZXRzTnZqSzZaSEttZHZNNVJaWUE&output=html"></iframe>
+    </div>
+    
+  </div>
+
+  <div class="Spacer"></div>
+  <!-- Column 3 -->
+  <div id="column3">
+  
+    <div class="WidgetMedium">
+      <div class="WidgetHeader Green">Weather</div>
+      <embed width="100%" height="92%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://swf.yowindow.com/yowidget3.swf?location_id=gn:6173331&location_name=Vancouver&time_format=12&unit_system=metric&background=#FFFFFF&copyright_bar=false">
+    </div>
+
+    <div class="WidgetMedium">
+      <div class="WidgetHeader Blue">News</div>
+      <iframe class="Medium" src="http://www.cbc.ca/m/rich/"></iframe>
+    </div>
+  
+  </div>
+  <div class="Spacer"></div>
+  
+</div>
+
+</body>
+</html>
