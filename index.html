@@ -1,78 +1,140 @@
-<head>
-<title>Project Name</title>
 
-<link href="style.css" type="text/css" rel="stylesheet" />
-
-<!-- jQuery API files -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
-
-
-<!-- Enable Drag and Drop Support -->
-<script type="text/javascript">
-
-$(document).ready(function () {
-  $("#column1,#column2,#column3").sortable({
-    connectWith: "#column1,#column2,#column3",
-    handle: ".WidgetHeader",
-    opacity: 0.6
-  });
-});
-
-</script>
-</head>
-
-<body>
-
-<div id="Main">
-  
-  <div id="header">Project Name</div>
-  
-  <div class="Spacer"></div>
-  <!-- Column 1 -->
-  <div id="column1">
-  
-    <div class="WidgetLong">
-      <div class="WidgetHeader Purple">Google Calendar</div>
-      <iframe class="Long" src="https://www.google.com/calendar/embed?src=elijahreale%40gmail.com&ctz=America/Vancouver"></iframe>
-    </div>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     
-  </div>
-
-  <div class="Spacer"></div>
-  <!-- Column 2 -->
-  <div id="column2">
-  
-    <div class="WidgetMedium">
-      <div class="WidgetHeader DarkRed">YouTube</div>
-      <iframe class="Medium" src="http://www.youtube.com/embed/zn7-fVtT16k" allowfullscreen></iframe>
-    </div>
-  
-    <div class="WidgetMedium">
-      <div class="WidgetHeader Brown">Google Docs</div>
-      <iframe class="Medium" src="https://docs.google.com/spreadsheet/pub?key=0AoCF2iBs2ZZ5dFNLZXRzTnZqSzZaSEttZHZNNVJaWUE&output=html"></iframe>
-    </div>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
     
-  </div>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    
+    <script src="ui/jquery.ui.widget.js"></script>
+    <script src="ui/jquery.ui.mouse.js"></script>
+    <script src="ui/jquery.ui.draggable.js"></script>
+    
+    <!-- Collision jQuery Plugin (Customized) -->
+    <script src="jquery-collision.js"></script>
+    <script src="jquery-ui-draggable-collision.min.js"></script>
+     
+    <style>
+    	html, body { height:100%; margin: 0; padding: 0; }
+      .widget { width: 142px; height: 122px; border: 2px solid black; margin: 4px; padding-top: 22px; }
+      .layout_area { margin: 0; padding: 0; height: 100%; width: 100%; }
+      
+      /* Widget Header */
+      .WidgetHeader {
+      	position: relative;
+      	top: -22px;
+	      cursor: move;
+	      height: 20px;
+	      line-height: 20px;
+	      text-align: left;
+	      padding-left: 6px;
+	      color: White;
+	      /*font-weight: bold;*/
+	      border-bottom: 2px solid Black;
+	    }
+	    
+	    .WidgetMain { position: relative; top: -22px; height: 100%; }
+      
+      /* Widget Header Colours */
+      .Green { background-color:Green; }
+      
+    </style>
+    
+    <script>
+/*      
+    	function overlap() {
+		  }
+*/      
+		
+		// use to save widget position
+		function findPos(div) {
+			var id = $(div).attr("id");
+      var x = $(div).position().left;
+      var y = $(div).position().top;
+      var w = $(div).width();
+      var h = $(div).height();
+      //debug
+      $("#"+id).find("span:first").text( "L:" + x + ", T:" + y + ", W:" + w + ", H:" + h);
+    }
+      
+      // allow divs to collide with each other
+      $(document).ready(function(){
+       	
+	      // everything that can be dragged around
+	      var $draggables = $(".widget");
+	      var id, $draggableItem;
 
-  <div class="Spacer"></div>
-  <!-- Column 3 -->
-  <div id="column3">
-  
-    <div class="WidgetMedium">
-      <div class="WidgetHeader Green">Weather</div>
-      <embed width="100%" height="92%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://swf.yowindow.com/yowidget3.swf?location_id=gn:6173331&location_name=Vancouver&time_format=12&unit_system=metric&background=#FFFFFF&copyright_bar=false">
-    </div>
+	      // go through each item, get it's id,
+	      // and tell draggable() to collide with every obstacle but itself
+	      for (var i = 0; i < $draggables.length; i++) {
+		      $draggableItem = $draggables.eq(i);
+		      id = $draggableItem.attr("id");
 
-    <div class="WidgetMedium">
-      <div class="WidgetHeader Blue">News</div>
-      <iframe class="Medium" src="http://www.cbc.ca/m/rich/"></iframe>
-    </div>
-  
-  </div>
-  <div class="Spacer"></div>
-  
-</div>
+		      $draggableItem.draggable({
+		      	handle: ".WidgetHeader",
+		      	containment: "parent",
+		      	snap: true,
+			      obstacle: ".widget[id!=\"" + id + "\"]",
+			      preventCollision: true
+			    });
+			  }
+			  
+			  $( ".widget" ).resizable({
+			  	//stop: overlap,
+				  autoHide: true,
+				  //aspectRatio: 1
+				});
+				 	
+			});
+      
+      
+    </script>
+    
+  </head>
+  <body>  
+  	
+  	<div class="layout_area" id="0" onclick="findPos(this)"> <span></span>
+  	
+  		<div class="widget ui-widget-content" style="position: absolute; left: 405px; top: 204px;" id="1" onclick="findPos(this)">
+	  		<div class="WidgetHeader Green"></div>
+	  		<div class="WidgetMain">
+	  			<span></span>
+	  		</div>
+  		</div>
+  		
+  		<div class="widget ui-widget-content" style="position: absolute; left: 405px; top: 360px;" id="2" onclick="findPos(this)">
+	  		<div class="WidgetHeader Green"></div>
+	  		<div class="WidgetMain">
+	  			<span></span>
+	  		</div>
+  		</div>
 
-</body>
+  		<div class="widget ui-widget-content" style="position: absolute; left: 559px; top: 204px; width: 280px; height: 278px;" id="3" onclick="findPos(this)">
+  		 	<div class="WidgetHeader Green"><span></span></div>
+  		 	<div class="WidgetMain">
+  				<embed width="100%" height="100%" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" src="http://swf.yowindow.com/yowidget3.swf?location_id=gn:6173331&location_name=Vancouver&time_format=12&unit_system=metric&background=#FFFFFF&copyright_bar=false">
+  		 	</div>
+  		</div>
+  		
+  		<div class="widget ui-widget-content" style="position: absolute; left: 851px; top: 204px;" id="4" onclick="findPos(this)">
+  			<div class="WidgetHeader Green"></div>
+  			<div class="WidgetMain">
+	  			<span></span>
+	  		</div>
+  		</div>
+  		
+  		<div class="widget ui-widget-content" style="position: absolute; left: 851px; top: 360px;" id="5" onclick="findPos(this)">
+	  		<div class="WidgetHeader Green"></div>
+	  		<div class="WidgetMain">
+	  			<span></span>
+	  		</div>
+  		</div>
+  		
+  	</div>
+    
+  </body>
 </html>
+
