@@ -66,15 +66,13 @@ html, body { height:100%; margin: 0; padding: 0; text-align: center; }
 	    background: #333;
 	    background-image: -moz-linear-gradient(#333, #999);
 	    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #999),color-stop(1, #333));
-	
-	    -moz-border-radius: 35px;
-	    border-radius: 35px;
-	
-	    border-width: 3px;
+		
+	    border-width: 1px;
 	    border-style: solid;
 	    border-color: #c4d9df #a4c3ca #83afb7;            
 	    width: 100%;
 	    height: 35px;
+        padding: 5px;
 	    overflow: hidden; /* Clear floats */
     }
 
@@ -86,14 +84,14 @@ html, body { height:100%; margin: 0; padding: 0; text-align: center; }
     #search
     {
 	    padding: 5px 9px;
-	    height: 23px;
+	    height: 22px;
 	    width: 60%;
 	    border: 1px solid #a4c3ca;
 	    font: normal 13px 'trebuchet MS', arial, helvetica;
 	    background: #f1f1f1;
 	
-	    -moz-border-radius: 50px 3px 3px 50px;
-	     border-radius: 50px 3px 3px 50px;
+	    -moz-border-radius: 0px 3px 3px 0px;
+	     border-radius: 0px 3px 3px 0px;
 	     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
 	     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
 	     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);            
@@ -106,7 +104,7 @@ html, body { height:100%; margin: 0; padding: 0; text-align: center; }
 	    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #d4e8ec),color-stop(1, #FFF));
 	
 	    -moz-border-radius: 2px 50px 50px 2px;
-	    border-radius: 2px 50px 50px 2px;
+	    border-radius: 2px 0px 0px 2px;
 	
 	    border-width: 1px;
 	    border-style: solid;
@@ -130,7 +128,7 @@ html, body { height:100%; margin: 0; padding: 0; text-align: center; }
 
     #submitSearch:active
     {		
-	    background: #FFF;
+	    background: #F1F1F1;
 	    outline: none;		
     }
 
@@ -166,9 +164,6 @@ html, body { height:100%; margin: 0; padding: 0; text-align: center; }
     {
         width: 350px;
         border: 1px solid #ccc;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
         -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
         -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
         box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
@@ -187,21 +182,21 @@ html, body { height:100%; margin: 0; padding: 0; text-align: center; }
     /* End of setting styling */
 
 /* End of Header */
-#tabs {
-    height: 50px; 
-    text-align: left;   
-}
-#tabs ul {
-    list-style: none;    
-}
-#tabs ul li {
-    width: 50px;   
-    display: inline-block; 
-    border: 1px solid black; /* Placeholder for layout */  
-}
-#widgetContainer {
-    width: 100%;
-    border: 1px solid black; /* Placeholder for layout */   
-    margin: 20px auto;
-    height: 1000px;    
-}
+    #tabs {
+        height: 50px; 
+        text-align: left;   
+    }
+    #tabs ul {
+        list-style: none;    
+    }
+    #tabs ul li {
+        width: 50px;   
+        display: inline-block; 
+        border: 1px solid black; /* Placeholder for layout */  
+    }
+    #widgetContainer {
+        width: 100%;
+        border: 1px solid black; /* Placeholder for layout */   
+        margin: 20px auto;
+        height: 1000px;    
+    }
