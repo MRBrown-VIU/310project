@@ -1,0 +1,8 @@
+#tabs { position:relative; margin:0; height:100%; }
+
+/* Prevents widget parent container from extending too far down */
+.ui-tabs-panel { position:absolute; bottom:0; right:0; height:100%; width:100%; margin:0 !important; padding:0 !important; }
+
+#tabs li .ui-icon-close { float:left; margin-right:0.5em !important; }       /* Stop close button on tabs from wrapping */
+.ui-tabs-nav {height:43px !important; }                                      /* Stop tab nav panel from resizing when tabs are moved */ 
+.ui-tabs-nav, .ui-state-default { z-index:99; }                              /* Make sure tabs are always on top */

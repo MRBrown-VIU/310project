@@ -1,18 +1,11 @@
-#tabs ul {
-    list-style: none;    
+#container {
+		height: 100%;
+    width: 1040px;  
+    text-align: center; 
+    margin: 20px auto;
 }
-#tabs ul li {
-    width: 50px;   
-    display: inline-block; 
-    border: 1px solid black; /* Placeholder for layout */  
-    background-color: white;
-}
-#widgetContainer {
-    width: 100%;
-    border: 5px solid black; /* Placeholder for layout */ 
-    -moz-border-radius: 5px 5px 5px 5px;
-     border-radius: 5px 5px 5px 5px;  
-    margin: 0px auto;
-    height: 1024px;   
-    background-color: white; 
+
+#tab-container {
+  height:75%;
+  text-align:left;
 }

@@ -1,0 +1,39 @@
+html, body { height:100%; margin:0; padding:0; }
+
+
+/* ------------- Tabs ------------- */
+#tabs { position:relative; margin:0; height:100%; }
+
+/* Prevents widget parent container from extending too far down */
+.ui-tabs-panel { position:absolute; bottom:0; right:0; height:100%; width:100%; margin:0 !important; padding:0 !important; }
+
+#tabs li .ui-icon-close { float:left; margin-right:0.5em !important; }       /* Stop close button on tabs from wrapping */
+.ui-tabs-nav {height:43px !important; }                                      /* Stop tab nav panel from resizing when tabs are moved */ 
+.ui-tabs-nav, .ui-state-default { z-index:99; }                              /* Make sure tabs are always on top */
+
+/* -------------------------------------------- */
+
+
+/* ------------- Widget ------------- */
+/* Widget Container */
+.widget { width:142px; height:122px; border:2px solid black; margin:4px; padding-top:22px; }
+
+/* Widget Header */
+.WidgetHeader {
+position:relative;
+top:-22px;
+cursor:move;
+height:20px;
+line-height:20px;
+text-align:left;
+padding-left:6px;
+color:White;
+border-bottom:2px solid Black;
+}
+
+/* Widget Content */
+.WidgetMain { position:relative; top:-22px; height:100%; }
+
+/* Widget Header Colours */
+.Green { background-color:Green; } 
+/* -------------------------------------------- */

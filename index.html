@@ -4,24 +4,32 @@
     <title>Home | Sticky Board</title>
     <meta charset="utf-8">
     
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/header.css"/>
     <link rel="stylesheet" href="css/container.css"/>
-    <link rel="stylesheet" href="css/widget.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/widget.css"/>
+    <link rel="stylesheet" href="css/tabs.css"/>
     
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    
+    <!-- jQuery UI -->
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="ui/jquery.ui.widget.js"></script>
     <script src="ui/jquery.ui.mouse.js"></script>
     <script src="ui/jquery.ui.draggable.js"></script>
     
-    <!-- Collision jQuery Plugin (Customized) -->
-    <script src="jquery-collision.js"></script>
-    <script src="jquery-ui-draggable-collision.min.js"></script>
+    <!-- jQuery Draggable Collision (Customized) -->
+    <script src="collision/jquery-collision.js"></script>
+    <script src="collision/jquery-ui-draggable-collision.min.js"></script>
     
-    <script type="text/javascript" src="main.js"></script>
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/widget.js"></script>
+    
 
   </head>
   <body>
@@ -30,11 +38,11 @@
             <div id="title">
                 <h1>Custom Title</h1>
             </div>
-            
-            <div id="settings">
-                <button type="submit" id="setButton">
-                    <img src="img/gear.png" alt="settings" width=30px height=30px />
-                </button>
+            <div id="searchBar">
+                <form id="searchBox" action="">
+                    <input id="search" type="text" placeholder="Type here">
+                    <input id="submitSearch" type="submit" value="Search">
+                </form>            
             </div>
             <div id="login">
                 <form id="loginMenu">
@@ -51,61 +59,58 @@
 -->
                 </form>
             </div>
-            <div class="clear"></div>
-            <div id="searchBar">
-                <form id="searchBox" action="">
-                    <input id="search" type="text" placeholder="Type here">
-                    <input id="submitSearch" type="submit" value="Search">
-                </form>            
+            <div id="settings">
+                <button type="submit" id="setButton">
+                <img src="img/gear.png" alt="settings" width=30px height=30px />
+                </button>
             </div>        
         </div>
-    <div id="tabs">
-        <ul>
-            <li><a href="#">Tab 1</a></li>  
-            <li><a href="#">Tab 2</a></li>
-            <li><a href="#" ><li>Tab 3</a></li>       
-        </ul>
-    </div>
-    <div id="widgetContainer">
-    <div class="layout_area" id="0" onclick="findPos(this)"> <span></span>
-  	
-  		<div class="widget ui-widget-content" style="position: absolute; left: 405px; top: 204px;" id="1" onclick="findPos(this)">
-	  		<div class="WidgetHeader Green"></div>
-	  		<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
-  		
-  		<div class="widget ui-widget-content" style="position: absolute; left: 405px; top: 360px;" id="2" onclick="findPos(this)">
-	  		<div class="WidgetHeader Green"></div>
-	  		<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
+        
+        
+        
+        
+        <!-- tabs / widgets -->    
+        <div id="tab-container">
+        
+          <!-- add tab -->
+          <div id="dialog" title="Tab data">
+	          <form>
+		          <fieldset class="ui-helper-reset">
+			          <label for="tab_title">Title</label>
+			          <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
+			          <label for="tab_content">Content</label>
+			          <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all"></textarea>
+			        </fieldset>
+			      </form>
+			    </div>
+			    <button id="add_tab">Add Tab</button>
 
-  		<div class="widget ui-widget-content" style="position: absolute; left: 559px; top: 204px; width: 280px; height: 278px;" id="3" onclick="findPos(this)">
-  		 	<div class="WidgetHeader Green"><span></span></div>
-  		 	<div class="WidgetMain">
-  				<embed width="100%" height="100%" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" src="http://swf.yowindow.com/yowidget3.swf?location_id=gn:6173331&location_name=Vancouver&time_format=12&unit_system=metric&background=#FFFFFF&copyright_bar=false">
-  		 	</div>
-  		</div>
-  		
-  		<div class="widget ui-widget-content" style="position: absolute; left: 851px; top: 204px;" id="4" onclick="findPos(this)">
-  			<div class="WidgetHeader Green"></div>
-  			<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
-  		
-  		<div class="widget ui-widget-content" style="position: absolute; left: 851px; top: 360px;" id="5" onclick="findPos(this)">
-	  		<div class="WidgetHeader Green"></div>
-	  		<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
-  		
-  	</div>
-  	</div>
+		      <!-- tabs container -->
+		      <div id="tabs">
+  
+				    <!-- tabs list -->
+				    <ul>
+					    <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+					  </ul>
+  
+				    <!-- widget bumper -->
+					  <div id="bumber" style="position: absolute; top: -5px; height: 60px; width:100%;"></div>
+  
+					  <!-- tab-1 content -->
+					  <div id="tabs-1">
+       
+				    <!-- widget -->
+				    <div class="widget ui-widget-content" style="position: absolute; top:55px; left:0;" id="1" onclick="findPos(this)">
+						  <div class="WidgetHeader Green"></div>
+						  <div class="WidgetMain"><span></span></div>
+					  </div>
+
+				  </div>
+				</div>
+
+
+
+  	<hr/>
   	<div id="footer">
         <p>Sitemap etc</p>
   	</div>
