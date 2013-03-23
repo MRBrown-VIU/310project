@@ -1,13 +1,12 @@
 #title {
-    border: 1px solid black; /* Placeholder for layout */
-    width: 400px; /* Placeholder for layout */
-    float:left;
+    padding-left: 20px;
+    float: left;
 }
 /* Search Bar Styling */
 #searchBar {
-    float: left;
-    margin-left:20px;
-    margin-top: 10px;
+    width: 250px;
+    margin-top: 50px;
+    margin-left: 775px;
 }
 
 #searchBox
@@ -27,7 +26,6 @@
 
 #search, #submit
 {
-    float: left;
 }
 
 #search
@@ -93,10 +91,8 @@
 /* Login Menu Styling */
 
 #login {
-    float:left;
-    margin-left:20px;
-    margin-top: 10px;
-    width:150px; /* Placeholder for layout */
+    float:right;
+    margin-right:30px;
 }
 
 #loginHeader
@@ -124,8 +120,7 @@
 /* Settings Menu Styling */
 
 #settings {
-    margin:10px 0 0 0;
-    float:left;
+    float:right;
 }
 
 /* End of setting styling */
