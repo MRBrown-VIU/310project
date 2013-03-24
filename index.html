@@ -38,9 +38,23 @@
             <div id="title">
                 <h1>Custom Title</h1>
             </div>
+            <div id="searchBar">
+                <form id="searchBox" action="">
+                    <input id="search" type="text" placeholder="Type here">
+                    <input id="submitSearch" type="submit" value="Search">
+                </form>            
+            </div>
+            
+            <div id="settings">
+                <button type="submit" id="setButton">
+                  <img src="img/gear.png" alt="settings" width=30px height=28px />
+                </button>
+            </div>
+            
             <div id="login">
                 <form id="loginMenu">
-                    <input id="loginHeader" type="button" value="Log In"></h1>
+                    <!-- <input id="loginHeader" type="button" value="Log In"> -->
+                    <button id="loginHeader" type="submit">Log In</button>
 <!-- 
                        <fieldset id="inputs">
                         <input id="username" type="text placeholder="Username" autofocus required>
@@ -53,17 +67,6 @@
 -->
                 </form>
             </div>
-            <div id="settings">
-                <button type="submit" id="setButton">
-                <img src="img/gear.png" alt="settings" width=30px height=30px />
-                </button>
-            </div> 
-            <div id="searchBar">
-                <form id="searchBox" action="">
-                    <input id="search" type="text" placeholder="Type here">
-                    <input id="submitSearch" type="submit" value="Search">
-                </form>            
-            </div>       
         </div>
         
         
@@ -74,47 +77,47 @@
         
           <!-- add tab -->
           <div id="dialog" title="Tab data">
-            <form>
-              <fieldset class="ui-helper-reset">
-                <label for="tab_title">Title</label>
-                <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
-                <label for="tab_content">Content</label>
-                <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all"></textarea>
-              </fieldset>
-            </form>
-          </div>
-          <button id="add_tab">Add Tab</button>
+	          <form>
+		          <fieldset class="ui-helper-reset">
+			          <label for="tab_title">Title</label>
+			          <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
+			          <label for="tab_content">Content</label>
+			          <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all"></textarea>
+			        </fieldset>
+			      </form>
+			    </div>
+			    <button id="add_tab">Add Tab</button>
 
-          <!-- tabs container -->
-          <div id="tabs">
+		      <!-- tabs container -->
+		      <div id="tabs">
   
-            <!-- tabs list -->
-            <ul>
-              <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
-            </ul>
+				    <!-- tabs list -->
+				    <ul>
+					    <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+					  </ul>
   
-            <!-- widget bumper -->
-            <div id="bumber" style="position: absolute; top: -5px; height: 60px; width:100%;"></div>
+				    <!-- widget bumper -->
+					  <div id="bumber" style="position: absolute; top: -5px; height: 60px; width:100%;"></div>
   
-            <!-- tab-1 content -->
-            <div id="tabs-1">
+					  <!-- tab-1 content -->
+					  <div id="tabs-1">
        
-            <!-- widget -->
-            <div class="widget ui-widget-content" style="position: absolute; top:55px; left:0;" id="1" onclick="findPos(this)">
-              <div class="WidgetHeader Green"></div>
-              <div class="WidgetMain"><span></span></div>
-            </div>
+				    <!-- widget -->
+				    <div class="widget ui-widget-content" style="position: absolute; top:55px; left:0;" id="1" onclick="findPos(this)">
+						  <div class="WidgetHeader Green"></div>
+						  <div class="WidgetMain"><span></span></div>
+					  </div>
 
-          </div>
-        </div>
+				  </div>
+				</div>
 
 
 
-    <hr/>
-    <div id="footer">
+  	<hr/>
+  	<div id="footer">
         <p>Sitemap etc</p>
-    </div>
-    </div>
+  	</div>
+  	</div>
     
     
   </body>
