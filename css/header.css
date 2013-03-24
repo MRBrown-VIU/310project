@@ -98,8 +98,9 @@
 /* Login Menu Styling */
 
 #login {
-    float:right;
-    margin-right:30px;
+    float:left;
+    margin-right:34px;
+    margin-left: 690px;
 }
 
 #loginHeader
@@ -127,7 +128,7 @@
 /* Settings Menu Styling */
 
 #settings {
-    float:right;
+    float:left;
 }
 
 /* End of setting styling */
