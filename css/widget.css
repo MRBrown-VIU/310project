@@ -18,4 +18,16 @@
 .WidgetMain { position:relative; top:-22px; height:100%; }
 
 /* Widget Header Colours */
-.Green { background-color:Green; } 
+.Green { background-color:Green; }
+.Red { background-color:Red; }
+
+.close-widget-button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  height: 13px;
+  width: 13px;
+  background: url('../img/close.png') no-repeat;
+  cursor: pointer;
+  border: none;
+}

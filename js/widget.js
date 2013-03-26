@@ -16,9 +16,9 @@ function findPos(div) {
   
 
   //debug
-  $("#"+id).find("span:first").text( "L:" + x + ", T:" + y + ", W:" + w + ", H:" + h);
+  $("#"+id).find("span").text( "L:" + x + ", T:" + y + ", W:" + w + ", H:" + h);
 }
-      
+
 // allow divs to collide with each other
 $(document).ready(function(){
    
@@ -31,14 +31,15 @@ $(document).ready(function(){
   for (var i = 0; i < $draggables.length; i++) {
     $draggableItem = $draggables.eq(i);
     id = $draggableItem.attr("id");
-
+    
     $draggableItem.draggable({
       handle: ".WidgetHeader",
       //containment: "parent",																				 /* use 'restraint' and 'preventProtrusion' instead */
       snap: true,
       obstacle: ".widget[id!=\"" + id + "\"], #bumber",                /* temp solution */
       preventCollision: true,
-      restraint: "#tabs-1",                                            /* temp solution */
+      //restraint: "#tabs-1",                                            /* temp solution */
+      restraint: "#collision-container",
       preventProtrusion: true
     });
   }
@@ -47,4 +48,11 @@ $(document).ready(function(){
     //stop: overlap,
     autoHide: true,
   });  
+});
+
+//remove widget
+$(window).load(function() {
+  $(".close-widget-button").click(function () {
+    $(this).parent().parent().remove();
+  });
 });
