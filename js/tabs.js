@@ -74,11 +74,4 @@ $(function() {
     tabs.tabs( "refresh" );
   });
 
-  tabs.bind( "keyup", function( event ) {
-    if ( event.altKey && event.keyCode === $.ui.keyCode.BACKSPACE ) {
-      var panelId = tabs.find( ".ui-tabs-active" ).remove().attr( "aria-controls" );
-      $( "#" + panelId ).remove();
-      tabs.tabs( "refresh" );
-    }
-  });
 });
