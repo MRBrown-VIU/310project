@@ -111,6 +111,7 @@
 }
 
 #loginMenu {
+    display: none;
 }
 
 #loginHeader
