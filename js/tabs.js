@@ -2,9 +2,8 @@ $(function() {
   var tabTitle = $( "#tab_title" ),
     tabContent = $( "#tab_content" ),
     tabTemplate = "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>",
-    tabCounter = 2;
+    tabCounter = $("#tabs li").length;
 
-  // var tabs = $( "#tabs" ).tabs();
   var tabs = $( "#tabs" ).tabs({
     beforeLoad: function( event, ui ) {
       ui.jqXHR.error(function() {
@@ -15,6 +14,7 @@ $(function() {
   
   // make sortable
   tabs.find( ".ui-tabs-nav" ).sortable({
+    items: "li:not(.ui-state-disabled)",
     axis: "x",
     stop: function() {
       tabs.tabs( "refresh" );
@@ -56,6 +56,7 @@ $(function() {
  
     tabs.find( ".ui-tabs-nav" ).append( li );
     tabs.append( "<div id='" + id + "'><p>" + tabContentHtml + "</p></div>" );
+    resizeTabs();
     tabs.tabs( "refresh" );
     tabCounter++;
   }
@@ -71,7 +72,24 @@ $(function() {
   tabs.delegate( "span.ui-icon-close", "click", function() {
     var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
     $( "#" + panelId ).remove();
+    resizeTabs();
     tabs.tabs( "refresh" );
+  });
+  
+  //resize tabs
+  function resizeTabs() {
+	  var num_tabs = ($("#tabs li").length) - 1; /* num of tabs minus 1 for the add tab button */ 
+    var panel_width_offset = (2 * num_tabs) + 8; /* 8px allowance */
+    var panel_width = ($(".ui-tabs-nav").innerWidth()) - panel_width_offset - 56; /* panel width minus add tab button */
+    var tab_width = (panel_width/num_tabs);
+    
+    $("#tabs li").width(tab_width+'px');
+    
+  }
+
+  $(window).load(function() {
+    resizeTabs();
+    $("#header").width(($("#tabs").innerWidth())-4); // i dont understand why this is necessary but i should probably put it somewhere else
   });
 
 });

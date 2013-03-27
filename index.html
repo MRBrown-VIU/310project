@@ -52,6 +52,7 @@
                     <li><a href="#">
                         <img src="img/gear.png" alt="settings" width=30px height=30px /></a>
                         <ul class="subnav">
+                        		<li style="border-top:0; border-right:0; border-left:0; height:0;"></li>
                             <li id ="settings"><a href="#">Settings</a></li>
                             <li id ="background"><a href="#">Background</a></li>
                         </ul>
@@ -63,7 +64,7 @@
                 <button id="loginHeader" type="submit">Log In</button>
                 <form id="loginMenu">   
                        <fieldset id="inputs">
-                        <input id="username" type="text placeholder="Username" autofocus required>
+                        <input id="username" type="text" placeholder="Username" autofocus required>
                         <input id="password" type="password" placeholder="Password" required>
                     </fieldset>
                     <fieldset id="actions">
@@ -91,7 +92,7 @@
               </fieldset>
             </form>
           </div>
-          <button id="add_tab">Add Tab</button>
+          <!-- <button id="add_tab">Add Tab</button> -->
 
           <!-- tabs container -->
           <div id="tabs">
@@ -99,8 +100,11 @@
   
             <!-- tabs list -->
             <ul>
-              <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
-              <li><a href="#tabs-2">Tab 2</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+              <!-- <li id="add_tab_tab" class="ui-state-disabled" style="text-align:center;"><button id="add_tab">+</button></li> -->
+              <li id="add_tab_button" class="ui-state-disabled"><span id="add_tab">+</span></li>
+              <li><a href="#tabs-1">Home</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+              <li><a href="#tabs-2">Work</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+              <li><a href="#tabs-3">School</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
             </ul>
   
             <!-- widget bumper -->
@@ -127,6 +131,8 @@
               </div>
 
             </div>
+          
+          <div id="tabs-3"></div>
           
           </div>
           </div>
