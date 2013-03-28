@@ -34,11 +34,9 @@ $(document).ready(function(){
     
     $draggableItem.draggable({
       handle: ".WidgetHeader",
-      //containment: "parent",																				 /* use 'restraint' and 'preventProtrusion' instead */
       snap: true,
-      obstacle: ".widget[id!=\"" + id + "\"], #bumber",                /* temp solution */
+      obstacle: ".widget[id!=\"" + id + "\"], #bumber",
       preventCollision: true,
-      //restraint: "#tabs-1",                                            /* temp solution */
       restraint: "#collision-container",
       preventProtrusion: true
     });
