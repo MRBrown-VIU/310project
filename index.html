@@ -51,10 +51,30 @@
                 <ul id="nav" class="topnav">
                     <li><a href="#">
                         <img src="img/gear.png" alt="settings" width=30px height=30px /></a>
-                        <ul class="subnav">
+                        <ul id="subnav">
                         		<li style="border-top:0; border-right:0; border-left:0; height:0;"></li>
-                            <li id ="settings"><a href="#">Settings</a></li>
-                            <li id ="background"><a href="#">Background</a></li>
+                            <li id ="settings"><a href="#">Settings</a>
+                                <ul id="subSettings">
+                                    <li id="options"><a href="#">Options</a></li>                               
+                                </ul>
+                            </li>
+                                                       		
+                            <li id ="themes"><a href="#">Themes</a>
+                                <ul id="subThemes">
+                                    <li id="theme1"><a href="#">Theme1</a></li>
+                                    <li id="theme2"><a href="#">Theme2</a></li>
+                                    <li id="theme3"><a href="#">Theme3</a></li>
+                                    <li id="theme4"><a href="#">Theme4</a></li>
+                                </ul>
+                            </li>
+                            <li id ="background"><a href="#">Background</a>
+                                <ul id="subBackground">
+                                    <li id="colour1"><a href="#">Colour1</a></li>
+                                    <li id="colour2"><a href="#">Colour2</a></li>
+                                    <li id="colour3"><a href="#">Colour3</a></li>
+                                    <li id="colour4"><a href="#">Colour4</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li> 
             </div>
@@ -69,7 +89,8 @@
                     </fieldset>
                     <fieldset id="actions">
                         <input type="submit" id="submitLogin" value="Log in">
-                        <a href="">Forgot Your Password?</a><a href="">Register</a>
+                        <a href="">Forgot Your Password?</a>
+                        <a href="">Register</a>
                     </fieldset>
                 </form>
             </div>

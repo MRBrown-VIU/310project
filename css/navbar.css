@@ -68,3 +68,33 @@ list-style:none;
     #nav ul a:hover {
         text-decoration:underline;  
     }
+    
+    /* sub sub menu */
+   
+        #nav ul li ul {
+        position:relative; 
+        left:0; 
+        display:none; 
+        margin:-31px 0 0 130px; 
+        padding:0; 
+        list-style:none;
+    }
+     
+    #nav ul li ul li {
+        width:130px; 
+        float:left; 
+        border:1px solid #333;
+        border-top:0;
+    }
+     
+    /* display block will make the link fill the whole area of LI */
+    #nav ul a {
+        display:block;  
+        height:15px;
+        padding: 8px 5px; 
+        color:#666;
+    }
+     
+    #nav ul a:hover {
+        text-decoration:underline;  
+    }
