@@ -6,13 +6,13 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/container.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-    <link rel="stylesheet" href="css/widget.css"/>
+    <link id ="style" rel="stylesheet" href="css/style.css"/>
+    <link id ="header" rel="stylesheet" href="css/header.css"/>
+    <link id ="container" rel="stylesheet" href="css/container.css"/>
+    <link id ="footer" rel="stylesheet" href="css/footer.css"/>
+    <link id ="widget" rel="stylesheet" href="css/widget.css"/>
     <link rel="stylesheet" href="css/tabs.css"/>
-    <link rel="stylesheet" href="css/navbar.css"/>
+    <link id = "navbar" rel="stylesheet" href="css/navbar.css"/>
     
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -32,6 +32,7 @@
     <script type="text/javascript" src="js/widget.js"></script>  
     <script type="text/javascript" src="js/settingsbar.js"></script>  
     <script type="text/javascript" src="js/login.js"></script>  
+    <script type="text/javascript" src="js/cssSwapper.js"></script>
 
   </head>
   <body>
@@ -61,10 +62,18 @@
                                                        		
                             <li id ="themes"><a href="#">Themes</a>
                                 <ul id="subThemes">
-                                    <li id="theme1"><a href="#">Theme1</a></li>
-                                    <li id="theme2"><a href="#">Theme2</a></li>
-                                    <li id="theme3"><a href="#">Theme3</a></li>
-                                    <li id="theme4"><a href="#">Theme4</a></li>
+                                    <li id="theme1" 
+                                    onClick="swapStyleSheet('css/themes/theme1/style1.css')">
+                                    <a href="#">Theme1</a></li>
+                                    <li id="theme2" 
+                                    onClick="swapStyleSheet('css/themes/theme2/style2.css')">
+                                    <a href="#">Theme2</a></li>
+                                    <li id="theme3" 
+                                    onClick="swapStyleSheet('css/themes/theme3/style3.css')">
+                                    <a href="#">Theme3</a></li>
+                                    <li id="theme4" 
+                                    onClick="swapStyleSheet('css/themes/theme4/style4.css')">
+                                <a href="#">Theme4</a></li>
                                 </ul>
                             </li>
                             <li id ="background"><a href="#">Background</a>
