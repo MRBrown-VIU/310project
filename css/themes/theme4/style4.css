@@ -11,7 +11,7 @@ html, body  {
 }
 
 body {
-  background-color: green;
+  background-image:url('../../../img/red015.jpg');
 }
 
 .clear { float:none; }
