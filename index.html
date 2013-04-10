@@ -4,31 +4,43 @@
     <title>Home | Sticky Board</title>
     <meta charset="utf-8">
     
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/container.css"/>
-    <link rel="stylesheet" href="css/widget.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <link id ="style" rel="stylesheet" href="css/style.css"/>
+    <link id ="header" rel="stylesheet" href="css/header.css"/>
+    <link id ="container" rel="stylesheet" href="css/container.css"/>
+    <link id ="footer" rel="stylesheet" href="css/footer.css"/>
+    <link id ="widget" rel="stylesheet" href="css/widget.css"/>
+    <link rel="stylesheet" href="css/tabs.css"/>
+    <link id = "navbar" rel="stylesheet" href="css/navbar.css"/>
     
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    
+    <!-- jQuery UI -->
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="ui/jquery.ui.widget.js"></script>
     <script src="ui/jquery.ui.mouse.js"></script>
     <script src="ui/jquery.ui.draggable.js"></script>
     
-    <!-- Collision jQuery Plugin (Customized) -->
-    <script src="jquery-collision.js"></script>
-    <script src="jquery-ui-draggable-collision.min.js"></script>
+    <!-- jQuery Draggable Collision (Customized) -->
+    <script src="collision/jquery-collision.js"></script>
+    <script src="collision/jquery-ui-draggable-collision.min.js"></script>
     
-    <script type="text/javascript" src="main.js"></script>
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/widget.js"></script>  
+    <script type="text/javascript" src="js/settingsbar.js"></script>  
+    <script type="text/javascript" src="js/login.js"></script>  
+    <script type="text/javascript" src="js/cssSwapper.js"></script>
+    <script type="text/javascript" src="js/add.js"></script>
 
   </head>
   <body>
     <div id="container">
         <div id="header">
             <div id="title">
-                <h1>Custom Title</h1>
+                <input id="title" type="text" placeholder="Custom Title">
             </div>
             <div id="searchBar">
                 <form id="searchBox" action="">
@@ -36,80 +48,147 @@
                     <input id="submitSearch" type="submit" value="Search">
                 </form>            
             </div>
+            
+            <div id="settings">
+                <ul id="nav" class="topnav">
+                    <li><a href="#">
+                        <img src="img/gear.png" alt="settings" width=30px height=30px /></a>
+                        <ul id="subnav">
+                        		<li style="border-top:0; border-right:0; border-left:0; height:0;"></li>
+                            <li id ="settings"><a href="#">Settings</a>
+                                <ul id="subSettings">
+                                    <li id="options"><a href="#">Options</a></li>                               
+                                </ul>
+                            </li>
+                                                       		
+                            <li id ="themes"><a href="#">Themes</a>
+                                <ul id="subThemes">
+                                    <li id="theme1" 
+                                    onClick="swapStyleSheet('css/themes/theme1/style1.css')">
+                                    <a href="#">Theme1</a></li>
+                                    <li id="theme2" 
+                                    onClick="swapStyleSheet('css/themes/theme2/style2.css')">
+                                    <a href="#">Theme2</a></li>
+                                    <li id="theme3" 
+                                    onClick="swapStyleSheet('css/themes/theme3/style3.css')">
+                                    <a href="#">Theme3</a></li>
+                                    <li id="theme4" 
+                                    onClick="swapStyleSheet('css/themes/theme4/style4.css')">
+                                <a href="#">Theme4</a></li>
+                                </ul>
+                            </li>
+                            <li id ="background"><a href="#">Colour</a>
+                                <ul id="subBackground">
+                                    <li id="colour1"><a href="#">Colour1</a></li>
+                                    <li id="colour2"><a href="#">Colour2</a></li>
+                                    <li id="colour3"><a href="#">Colour3</a></li>
+                                    <li id="colour4"><a href="#">Colour4</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li> 
+            </div>
+            
             <div id="login">
-                <form id="loginMenu">
-                    <input id="loginHeader" type="button" value="Log In"></h1>
-<!-- 
+
+                <button id="loginHeader" type="submit">Log In</button>
+                <form id="loginMenu">   
                        <fieldset id="inputs">
-                        <input id="username" type="text placeholder="Username" autofocus required>
+                        <input id="username" type="text" placeholder="Username" autofocus required>
                         <input id="password" type="password" placeholder="Password" required>
                     </fieldset>
                     <fieldset id="actions">
                         <input type="submit" id="submitLogin" value="Log in">
-                        <a href="">Forgot Your Password?</a><a href="">Register</a>
+                        <a href="">Forgot Your Password?</a>
+                        <a href="">Register</a>
                     </fieldset>
--->
                 </form>
             </div>
-            <div id="settings">
-                <button type="submit" id="setButton">
-                <img src="img/gear.png" alt="settings" width=30px height=30px />
-                </button>
-            </div>        
         </div>
-    <div id="tabs">
-        <ul>
-            <li>Tab 1</li>  
-            <li>Tab 2</li> 
-            <li>Tab 3</li>       
-        </ul>
-    </div>
-    <div id="widgetContainer">
-    <div class="layout_area" id="0" onclick="findPos(this)"> <span></span>
-  	
-  		<div class="widget ui-widget-content" style="position: absolute; left: 405px; top: 204px;" id="1" onclick="findPos(this)">
-	  		<div class="WidgetHeader Green"></div>
-	  		<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
-  		
-  		<div class="widget ui-widget-content" style="position: absolute; left: 405px; top: 360px;" id="2" onclick="findPos(this)">
-	  		<div class="WidgetHeader Green"></div>
-	  		<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
+        
+        
+        
+        
+        <!-- tabs / widgets -->    
+        <div id="tab-container">
+        
+          <!-- add tab -->
+          <div id="dialog" title="Tab data">
+            <form>
+              <fieldset class="ui-helper-reset">
+                <label for="tab_title">Title</label>
+                <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
+                <label for="tab_content">Content</label>
+                <textarea name="tab_content" id="tab_content" class="ui-widget-content ui-corner-all"></textarea>
+              </fieldset>
+            </form>
+          </div>
+          <!-- <button id="add_tab">Add Tab</button> -->
 
-  		<div class="widget ui-widget-content" style="position: absolute; left: 559px; top: 204px; width: 280px; height: 278px;" id="3" onclick="findPos(this)">
-  		 	<div class="WidgetHeader Green"><span></span></div>
-  		 	<div class="WidgetMain">
-  				<embed width="100%" height="100%" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" src="http://swf.yowindow.com/yowidget3.swf?location_id=gn:6173331&location_name=Vancouver&time_format=12&unit_system=metric&background=#FFFFFF&copyright_bar=false">
-  		 	</div>
-  		</div>
-  		
-  		<div class="widget ui-widget-content" style="position: absolute; left: 851px; top: 204px;" id="4" onclick="findPos(this)">
-  			<div class="WidgetHeader Green"></div>
-  			<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
-  		
-  		<div class="widget ui-widget-content" style="position: absolute; left: 851px; top: 360px;" id="5" onclick="findPos(this)">
-	  		<div class="WidgetHeader Green"></div>
-	  		<div class="WidgetMain">
-	  			<span></span>
-	  		</div>
-  		</div>
-  		
-  	</div>
-  	</div>
-  	<hr/>
-  	<div id="footer">
+          <!-- tabs container -->
+          <div id="tabs">
+          <div id="collision-container" style="height: 100%; width: 100%;">
+  
+            <!-- tabs list -->
+            <ul>
+              <!-- <li id="add_tab_tab" class="ui-state-disabled" style="text-align:center;"><button id="add_tab">+</button></li> -->
+              <li id="add_tab_button" class="ui-state-disabled"><span id="add_tab">+</span></li>
+              <li><a href="#tabs-1">Home</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+              <li><a href="#tabs-2">Work</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+              <li><a href="#tabs-3">School</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+            </ul>
+  
+            <!-- widget bumper -->
+            <div id="bumber" style="position: absolute; top: -5px; height: 60px; width:100%;"></div>
+  
+            <!-- tab-1 content -->
+            <div id="tabs-1">
+       
+              <!-- widget -->
+
+              <div class="widget ui-widget-content" style="position: absolute; top:54px; left:4px; width:600px; height:400px;" id="2-1" onclick="findPos(this)">
+                <div class="WidgetHeader Green"><input type="button" class="close-widget-button"/></div>
+                <div class="WidgetMain"><iframe style="height:100%; width:100%" src="http://www.youtube.com/embed/nGeKSiCQkPw" frameborder="0" allowfullscreen></iframe></div>
+              </div>
+              
+              <div class="widget ui-widget-content" style="position: absolute; top:84px; left:666px; width:300px; height:300px;" id="2-2">
+                <div class="WidgetHeader Green"><input type="button" class="close-widget-button"/></div>
+                <div class="WidgetMain"><embed width="100%" height="100%" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="http://swf.yowindow.com/yowidget3.swf?location_id=gn:6173331&location_name=Vancouver&time_format=12&unit_system=metric&background=#FFFFFF&copyright_bar=false"></div>
+              </div>
+
+            </div>
+            
+            <!-- tab-2 content -->
+            <div id="tabs-2">
+       
+              <!-- widget -->
+              
+              <div class="widget ui-widget-content" style="position: absolute; top:54px; left:4px; width:400px; height:400px;" id="1-1">
+                <div class="WidgetHeader Green"><input type="button" class="close-widget-button"/></div>
+                <div class="WidgetMain"><iframe frameBorder="0" class="Long" style="height:100%; width:100%" src="https://www.google.com/calendar/embed?src=elijahreale%40gmail.com&ctz=America/Vancouver"></iframe></div>
+              </div>
+              
+              <div class="widget ui-widget-content" style="position: absolute; top:54px; left:416px; width:400px; height:400px;" id="1-2">
+                <div class="WidgetHeader Green"><input type="button" class="close-widget-button"/></div>
+                <div class="WidgetMain"><iframe frameBorder="0" class="Medium" style="height:100%; width:100%" src="https://docs.google.com/spreadsheet/pub?key=0AoCF2iBs2ZZ5dFNLZXRzTnZqSzZaSEttZHZNNVJaWUE&output=html"></iframe></div>
+              </div>
+
+            </div>
+          
+          <div id="tabs-3"></div>
+          
+          </div>
+          </div>
+
+
+
+    <hr/>
+    <div id="footer">
         <p>Sitemap etc</p>
-  	</div>
-  	</div>
+    </div>
+    </div>
     
     
   </body>
 </html>
+ 
